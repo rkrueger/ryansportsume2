@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  dob: 1
+  city: MyString
+  state: MyString
+  country: MyString
+  height: 1
+  weight: 1
+  favorite_sport: MyString
+  icon_image: MyString
+
+two:
+  name: MyString
+  dob: 1
+  city: MyString
+  state: MyString
+  country: MyString
+  height: 1
+  weight: 1
+  favorite_sport: MyString
+  icon_image: MyString
