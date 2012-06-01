@@ -1,0 +1,78 @@
+
+<p>
+  <b>Name:</b>
+  <%= @organization.name %>
+</p>
+
+<p>
+  <b>Mascot:</b>
+  <%= @organization.mascot %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @organization.location %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @organization.level %>
+</p>
+
+<p>
+  <b>Sport:</b>
+  <%= @organization.sport %>
+</p>
+
+<h2>Teams</h2>
+<% @organization.teams.each do |team| %>
+  <p>
+    <b>Year:</b>
+    <%= team.year %>
+  </p>
+ 
+  <p>
+    <b>Wins:</b>
+    <%= team.wins %>
+  </p>
+
+  <p>
+    <b>Losses:</b>
+    <%= team.losses %>
+  </p>
+
+  <p>
+    <b>Achievements:</b>
+    <%= team.achievements %>
+  </p>
+
+<% end %>
+
+
+
+<h2>Add a Team (year):</h2>
+<%= form_for([@organization, @organization.team.build]) do |f| %>
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :wins %><br />
+    <%= f.text_field :wins %>
+  </div>
+  <div class="field">
+    <%= f.label :losses %><br />
+    <%= f.text_field :losses %>
+  </div>
+  <div class="field">
+    <%= f.label :achievements %><br />
+    <%= f.text_field :achievements %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

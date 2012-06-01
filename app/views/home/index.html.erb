@@ -1,2 +1,14 @@
-<h1>Sportsume</h1>
-<p>Login and form creation</p>
+<h1>Sportsumé</h1>
+
+
+<div>
+
+  <% if user_signed_in? %>
+  		
+  <% else %>
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+    <p>...or see the links at the top to use your email address.</p>
+
+  <% end %>
+
+</div>

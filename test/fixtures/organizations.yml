@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  mascot: MyString
+  location: MyString
+  level: MyString
+  sport: MyString
+
+two:
+  name: MyString
+  mascot: MyString
+  location: MyString
+  level: MyString
+  sport: MyString
