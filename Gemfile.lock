@@ -80,6 +80,7 @@ GEM
       oauth2 (~> 0.6.0)
       omniauth (~> 1.0)
     orm_adapter (0.0.7)
+    pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -138,6 +139,7 @@ DEPENDENCIES
   formtastic
   jquery-rails
   omniauth-facebook
+  pg
   rails (= 3.2.3)
   sass-rails (~> 3.2.3)
   sqlite3
