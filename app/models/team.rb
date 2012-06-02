@@ -1,3 +1,6 @@
 class Team < ActiveRecord::Base
-  attr_accessible :achievements, :losses, :organization_id, :wins, :year
+  belongs_to :organization
+
+
+  attr_accessible :achievements, :losses, :wins, :year
 end
