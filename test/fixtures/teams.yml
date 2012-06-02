@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  year: 1
+  wins: 1
+  losses: 1
+  achievements: MyText
+  organization_id: 1
+
+two:
+  year: 1
+  wins: 1
+  losses: 1
+  achievements: MyText
+  organization_id: 1

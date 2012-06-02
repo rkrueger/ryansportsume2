@@ -1,37 +1,20 @@
-<%= form_for(@organization) do |f| %>
-  <% if @organization.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@organization.errors.count, "error") %> prohibited this organization from being saved:</h2>
+<%= semantic_form_for(@organization) do |f| %>
 
-      <ul>
-      <% @organization.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+  <%= f.inputs do %>
+      <%= f.input :name %>
+      <%= f.input :level, :as => :select, :collection => ["Pro", "College", "High School"] %>
+      <%= f.input :mascot %>
+      <%= f.input :sport %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :mascot %><br />
-    <%= f.text_field :mascot %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :level %><br />
-    <%= f.text_field :level %>
-  </div>
-  <div class="field">
-    <%= f.label :sport %><br />
-    <%= f.text_field :sport %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :button %>
+    <%= f.action :cancel, :as => :link %>
+  <% end %>
+
+
+
+
+
+
 <% end %>

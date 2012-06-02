@@ -1,0 +1,21 @@
+<%= semantic_form_for(@team) do |f| %>
+
+  <%= f.inputs do %>
+      <%= f.input :organization_id, :as => :select, :collection => Organization.all %>
+      <%= f.input :year %>
+      <%= f.input :wins %>
+      <%= f.input :losses %>
+      <%= f.input :achievements %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :button %>
+    <%= f.action :cancel, :as => :link %>
+  <% end %>
+
+
+
+
+
+
+<% end %>

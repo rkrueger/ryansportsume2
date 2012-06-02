@@ -1,8 +1,9 @@
 
-<p>
-  <b>Name:</b>
+<h2>
   <%= @organization.name %>
-</p>
+</h2>
+  
+
 
 <p>
   <b>Mascot:</b>
@@ -24,55 +25,47 @@
   <%= @organization.sport %>
 </p>
 
-<h2>Teams</h2>
-<% @organization.teams.each do |team| %>
-  <p>
-    <b>Year:</b>
-    <%= team.year %>
-  </p>
- 
-  <p>
-    <b>Wins:</b>
-    <%= team.wins %>
-  </p>
-
-  <p>
-    <b>Losses:</b>
-    <%= team.losses %>
-  </p>
-
-  <p>
-    <b>Achievements:</b>
-    <%= team.achievements %>
-  </p>
-
-<% end %>
 
 
 
-<h2>Add a Team (year):</h2>
-<%= form_for([@organization, @organization.team.build]) do |f| %>
-  <div class="field">
-    <%= f.label :year %><br />
-    <%= f.text_field :year %>
-  </div>
-  <div class="field">
-    <%= f.label :wins %><br />
-    <%= f.text_field :wins %>
-  </div>
-  <div class="field">
-    <%= f.label :losses %><br />
-    <%= f.text_field :losses %>
-  </div>
-  <div class="field">
-    <%= f.label :achievements %><br />
-    <%= f.text_field :achievements %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
 
 
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
 <%= link_to 'Back', organizations_path %>
+<br><br>
+
+  <b>Teams (years):</b>
+    <br>
+  <table>
+  <tr>
+    <th>Year</th>
+    <th>Wins</th>
+    <th>Losses</th>
+    <th>Achievements</th>
+    <th width='20px'></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+  <% @organization.teams.each do |team| %>
+  <tr>
+    <td><%= team.year %></td>
+    <td><%= team.wins %></td>
+    <td><%= team.losses %></td>
+    <td><%= team.achievements %></td>
+    <td width='20px'></td>
+    <td><%= link_to 'Show', team %></td>
+    <td><%= link_to 'Edit', edit_team_path(team) %></td>
+    <td><%= link_to 'Destroy', team, confirm: 'Are you sure?',
+                                     method: :delete %></td>
+  </tr>
+<% end %>
+  </table>
+
+
+
+  
+
+
