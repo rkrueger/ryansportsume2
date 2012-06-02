@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
@@ -48,3 +47,36 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+
+<br><br>
+
+  <b>Teams (years):</b>
+    <br>
+  <table>
+  <tr>
+    <th>Year</th>
+    <th>Wins</th>
+    <th>Losses</th>
+    <th>Achievements</th>
+    <th width='20px'></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+  <% @user.teams.each do |team| %>
+  <tr>
+    <td><%= team.year %></td>
+    <td><%= team.wins %></td>
+    <td><%= team.losses %></td>
+    <td><%= team.achievements %></td>
+    <td width='20px'></td>
+    <td><%= link_to 'Show', team %></td>
+    <td><%= link_to 'Edit', edit_team_path(team) %></td>
+    <td><%= link_to 'Destroy', team, confirm: 'Are you sure?',
+                                     method: :delete %></td>
+  </tr>
+<% end %>
+  </table>

@@ -1,0 +1,20 @@
+
+
+<% @team = Team.find(params[:team_id]) %>
+
+<%= semantic_form_for @membership, :url => "/teams/#{@team.id}/memberships" do |f| %>
+  <%= f.inputs do %>
+   <%= f.input :team_id, :value => params[:team_id], :as => :hidden %>
+    <%= f.input :position %>
+    <%= f.input :jersey_number %>
+    <%= f.input :stats %>
+    <%= f.input :is_coach %>
+    <%= f.input :user_id, :value => current_user.id, :as => :hidden %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>
+
+

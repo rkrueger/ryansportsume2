@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Position:</b>
+  <%= @membership.position %>
+</p>
+
+<p>
+  <b>Jersey number:</b>
+  <%= @membership.jersey_number %>
+</p>
+
+<p>
+  <b>Stats:</b>
+  <%= @membership.stats %>
+</p>
+
+<p>
+  <b>Is coach:</b>
+  <%= @membership.is_coach %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%= @membership.team_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @membership.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_membership_path(@membership) %> |
+<%= link_to 'Back', memberships_path %>

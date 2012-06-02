@@ -1,0 +1,33 @@
+<h1>Listing memberships</h1>
+
+<table>
+  <tr>
+    <th>Position</th>
+    <th>Jersey number</th>
+    <th>Stats</th>
+    <th>Is coach</th>
+    <th>Team</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @memberships.each do |membership| %>
+  <tr>
+    <td><%= membership.position %></td>
+    <td><%= membership.jersey_number %></td>
+    <td><%= membership.stats %></td>
+    <td><%= membership.is_coach %></td>
+    <td><%= membership.team_id %></td>
+    <td><%= membership.user_id %></td>
+    <td><%= link_to 'Show', membership %></td>
+    <td><%= link_to 'Edit', edit_membership_path(membership) %></td>
+    <td><%= link_to 'Destroy', membership, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Membership', new_membership_path %>

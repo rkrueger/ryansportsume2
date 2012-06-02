@@ -1,14 +1,16 @@
 RyanSports2::Application.routes.draw do
   
-
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  resources :users
 
   resources :organizations
   
-  resources :teams
+  resources :teams do
+    resources :memberships
+  end
   
 
-  resources :users
+  
 
   
   
