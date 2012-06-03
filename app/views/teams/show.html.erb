@@ -48,7 +48,7 @@
 
 
    <% @team.users.each do |user| %>
-     <% user.memberships.where("team_id = ?", "3").each do |member| %>
+     <% user.memberships.where(@team.id).each do |member| %>
          <%= member.jersey_number %>
      
          <%= user.name %>
