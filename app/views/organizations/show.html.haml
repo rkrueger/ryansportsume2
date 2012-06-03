@@ -1,0 +1,48 @@
+
+%h2
+  = @organization.name
+%p
+  %b Mascot:
+  = @organization.mascot
+%p
+  %b Location:
+  = @organization.location
+%p
+  %b Level:
+  = @organization.level
+%p
+  %b Sport:
+  = @organization.sport
+= link_to 'Edit', edit_organization_path(@organization)
+|
+\#{link_to 'Back', organizations_path}
+%br
+  %br
+    %b Teams (years):
+    %br
+      %table
+        %tr
+          %th Year
+          %th Wins
+          %th Losses
+          %th Achievements
+          %th{:width => "20px"}
+          %th
+          %th
+          %th
+        - @organization.teams.each do |team|
+          %tr
+            %td= team.year
+            %td= team.wins
+            %td= team.losses
+            %td= team.achievements
+            %td{:width => "20px"}
+            %td= link_to 'Show', team
+            %td= link_to 'Edit', edit_team_path(team)
+            %td= link_to 'Destroy', team, confirm: 'Are you sure?', |
+                method: :delete        
+
+
+  
+
+

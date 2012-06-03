@@ -1,0 +1,9 @@
+= semantic_form_for(@organization) do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :level, :as => :select, :collection => ["Pro", "College", "High School"]
+    = f.input :mascot
+    = f.input :sport
+  = f.actions do
+    = f.action :submit, :as => :button
+    = f.action :cancel, :as => :link
