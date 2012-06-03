@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RyanSports2::Application.load_tasks
+Sportsume::Application.load_tasks
