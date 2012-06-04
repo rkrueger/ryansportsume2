@@ -3,7 +3,9 @@ class CreateOrganizations < ActiveRecord::Migration
     create_table :organizations do |t|
       t.string :name
       t.string :mascot
-      t.string :location
+      t.string :city
+      t.string :state
+      t.string :country
       t.string :level
       t.string :sport
 

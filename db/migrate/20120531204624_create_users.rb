@@ -1,8 +1,9 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
-      t.string :name
-      t.integer :dob
+      t.string :first_name
+      t.string :last_name
+      t.date :dob
       t.string :city
       t.string :state
       t.string :country
@@ -10,6 +11,8 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :weight
       t.string :favorite_sport
       t.string :icon_image
+      t.string :username
+      t.text :goals
 
       t.timestamps
       ## Database authenticatable
